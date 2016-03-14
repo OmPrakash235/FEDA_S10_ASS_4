@@ -1,0 +1,29 @@
+<!--Make two controllers with scope-->
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<title>AngularJS</title>
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script type="text/javascript">
+		var module = angular.module('myApp', []);
+		module.controller('firstCtrl', function($scope){
+			$scope.greeting = "Hello";
+		});
+		module.controller('secondCtrl', function($scope){
+			$scope.emp = {
+				firstName : 'OM',
+				lastName : 'PRAKASH'
+			}
+		});
+	</script>
+	</head>
+	<body>
+		<center>
+			<div>
+				<span ng-controller="firstCtrl">{{greeting}}, </span>
+				<span ng-controller="secondCtrl">{{emp.firstName}} {{emp.lastName}}</span>
+			</div>
+		</center>
+	</body>
+</html>
